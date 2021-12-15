@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Nav from './Nav.js';
 import Shop from './Shop.js';
 import Home from './Home.js';
@@ -6,15 +7,17 @@ import Cart from './Cart.js';
 import Button from './Button.js';
 
 const RouteSwitch = () => {
+    const [cart, setCart] = useState([]);
+    const [cartSize, setCartSize] = useState(0);
     return (
         <BrowserRouter>
             <Nav />
             <Routes>
                 <Route path="/" element={<Home />} exact/>
-                <Route path="/shop" element={<Shop />}/>
-                <Route path="/cart" element={<Cart />}/>
+                <Route path="/shop" element={<Shop cart={cart} addToCart={setCart} cartSize={cartSize} setCartSize={setCartSize}/>}/>
+                <Route path="/cart" element={<Cart cart={cart}/>}/>
             </Routes>
-            <Button text="Cart"/>
+            <Button text="Cart" itemsInCart={cartSize}/>
         </BrowserRouter>
     )
 }

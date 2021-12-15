@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import './Button.css';
 
-const Button = ({ text }) => {
+const Button = ({ text, itemsInCart }) => {
     return (
         <div className="button">
-            <Link to="/cart">{text}</Link>
+            <Link to="/cart">{text} {itemsInCart}</Link>
         </div>
     )
 }
