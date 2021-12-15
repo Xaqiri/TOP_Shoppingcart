@@ -1,0 +1,35 @@
+.nav {
+    background-color: black;
+    color: white;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    align-items: stretch;
+}
+
+.nav-left {
+    display: flex;
+    flex-grow: 1;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
