@@ -1,5 +1,18 @@
-const Cart = ({cart}) => {
+import { useState, useEffect } from 'react'
+import './Cart.css'
+
+const Cart = ({cart, cartSize, setCartSize}) => {
     let cartTotal = 0
+    const decrement = (food) => {
+        if (food.quantity > 1) {
+            food.quantity -= 1;
+            setCartSize(cartSize-1)
+        }
+    }
+    const increment = (food) => {
+        food.quantity += 1;
+        setCartSize(cartSize+1)
+    }
     const removeFromCart = () => {
         
     }
@@ -13,11 +26,15 @@ const Cart = ({cart}) => {
               <div>{food.name}</div>
               <div>{food.price}</div>
               <div>{food.size}</div>
-              <div>Quantity: {food.quantity}</div>
+              <div id="quantity">Quantity: 
+                <button onClick={() => decrement(food)}>-</button>
+                {food.quantity}
+                <button onClick={() => increment(food)}>+</button>
+              </div>
             </div>
           )
       })}
-      <div>Cart total: ${cartTotal}</div>
+      <div id="total">Cart total: ${cartTotal}</div>
       </div>
     )
 }

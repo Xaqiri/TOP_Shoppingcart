@@ -63,7 +63,6 @@ function Shop({cart, addToCart, cartSize, setCartSize}) {
             </div>
           )
       })}
-      {console.log(cart)}
     </div>
   );
 }
