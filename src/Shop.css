@@ -6,11 +6,11 @@
   background-color: black;
   color: white;
   height: 100vh;
-  padding-left: 5%;
+  padding-left: 1em;
 }
 
 .food {
-  width: 23%;
+  width: 24%;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -23,10 +23,10 @@
 
 .food:hover {
   border: 2px solid white;
-  cursor: pointer;
+  cursor: default;
 }
 
-.food button {
+.addToCartBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +37,7 @@
   border: 2px solid white;
 }
 
-.food button:hover {
+.addToCartBtn:hover {
   background-color: black;
   color: white;
   opacity: 100%;

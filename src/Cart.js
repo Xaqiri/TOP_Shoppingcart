@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import './Cart.css'
 
 const Cart = ({cart, cartSize, setCartSize}) => {
@@ -7,34 +6,38 @@ const Cart = ({cart, cartSize, setCartSize}) => {
         if (food.quantity > 1) {
             food.quantity -= 1;
             setCartSize(cartSize-1)
+        } else if (food.quantity > 0) {
+            removeFromCart(food);
         }
     }
     const increment = (food) => {
         food.quantity += 1;
         setCartSize(cartSize+1)
     }
-    const removeFromCart = () => {
-        
+    const removeFromCart = (food) => {
+        food.quantity -= 1;
+        setCartSize(cartSize-1)
+        cart.splice(cart.indexOf(food), 1)
     }
     return (
-    <div className="App">
+    <div className="Cart">
       {cart.map(food => {
           let itemTotal = food.price*food.quantity
           cartTotal += itemTotal
           return (
-            <div className="food" key={food.key} onClick={removeFromCart}>
-              <div>{food.name}</div>
-              <div>{food.price}</div>
-              <div>{food.size}</div>
-              <div id="quantity">Quantity: 
-                <button onClick={() => decrement(food)}>-</button>
-                {food.quantity}
-                <button onClick={() => increment(food)}>+</button>
+            <div className="food" key={food.key}>
+                <div>{food.name}</div>
+                <div>{food.price}</div>
+                <div>{food.size}</div>
+                <div id="quantity">Quantity: 
+                    <button className="changeQuantityBtn" onClick={() => decrement(food)}>-</button>
+                    {food.quantity}
+                    <button className="changeQuantityBtn" onClick={() => increment(food)}>+</button>
               </div>
             </div>
           )
       })}
-      <div id="total">Cart total: ${cartTotal}</div>
+      <div id="total">Cart total: ${cartTotal.toFixed(2)}</div>
       </div>
     )
 }

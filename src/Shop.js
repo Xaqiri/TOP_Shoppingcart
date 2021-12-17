@@ -59,7 +59,7 @@ function Shop({cart, addToCart, cartSize, setCartSize}) {
               <div>{food.name}</div>
               <div>{food.price}</div>
               <div>{food.size}</div>
-              <button onClick={() => handleClick(food)}>Add to cart</button>
+              <button className="addToCartBtn" onClick={() => handleClick(food)}>Add to cart</button>
             </div>
           )
       })}

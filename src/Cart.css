@@ -1,3 +1,15 @@
+.Cart {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    padding-left: 1em;
+  }
+  
 #total {
     width: 100%;
 }
@@ -6,4 +18,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.changeQuantityBtn {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
 }
