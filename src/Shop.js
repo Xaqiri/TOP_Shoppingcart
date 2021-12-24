@@ -52,14 +52,18 @@ function Shop({cart, addToCart, cartSize, setCartSize}) {
     setCartSize(cartSize+1)
   }
   return (
-    <div className="App">
+    <div className="Shop">
       {foods.map(food => {
           return (
             <div className="food" key={food.key}>
-              <div>{food.name}</div>
-              <div>{food.price}</div>
-              <div>{food.size}</div>
-              <button className="addToCartBtn" onClick={() => handleClick(food)}>Add to cart</button>
+              <div className="food-labels">
+                <div>{food.name}</div>
+                <div>{food.price}</div>
+                <div>{food.size}</div>
+              </div>
+              <div className="food-button">
+                <button className="addToCartBtn" onClick={() => handleClick(food)}>Add to cart</button>
+              </div>
             </div>
           )
       })}

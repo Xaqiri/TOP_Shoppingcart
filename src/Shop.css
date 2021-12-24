@@ -1,4 +1,4 @@
-.App {
+.Shop {
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
@@ -7,22 +7,26 @@
   color: white;
   height: 100vh;
   padding-left: 1em;
+  padding-right: 1em;
 }
 
 .food {
-  width: 24%;
-  height: 100px;
+  width: 25%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   background-color: white;
   color: black;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   border: 2px solid black;
+  box-sizing: border-box;
 }
 
 .food:hover {
-  border: 2px solid white;
+  border: 2px solid lightgreen;
+  background-color: gray;
+  color: white;
   cursor: default;
 }
 
@@ -32,9 +36,9 @@
   align-items: center;
   width: 100%;
   height: 2rem;
-  background-color: white;
-  color: black;
-  border: 2px solid white;
+  background-color: inherit;
+  color: inherit;
+  border: none;
 }
 
 .addToCartBtn:hover {
@@ -42,4 +46,17 @@
   color: white;
   opacity: 100%;
   cursor: inherit;
+  border-color: gray;
+}
+
+.food-button {
+  display: flex;
+  width: 100%;
+}
+
+.food-labels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

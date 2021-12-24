@@ -25,11 +25,13 @@ const Cart = ({cart, cartSize, setCartSize}) => {
           let itemTotal = food.price*food.quantity
           cartTotal += itemTotal
           return (
-            <div className="food" key={food.key}>
-                <div>{food.name}</div>
-                <div>{food.price}</div>
-                <div>{food.size}</div>
-                <div id="quantity">Quantity: 
+            <div className="food" key={cart.indexOf(food)}>
+                <div className="food-labels">
+                    <div>{food.name}</div>
+                    <div>{food.price}</div>
+                    <div>{food.size}</div>
+                </div>
+                <div className="quantity"> 
                     <button className="changeQuantityBtn" onClick={() => decrement(food)}>-</button>
                     {food.quantity}
                     <button className="changeQuantityBtn" onClick={() => increment(food)}>+</button>

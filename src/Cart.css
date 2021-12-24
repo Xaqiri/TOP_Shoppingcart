@@ -8,20 +8,28 @@
     color: white;
     height: 100vh;
     padding-left: 1em;
+    padding-right: 1em;
   }
   
 #total {
     width: 100%;
 }
 
-#quantity {
+.quantity {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .changeQuantityBtn {
     border: none;
     background-color: inherit;
     cursor: pointer;
+    color: inherit;
+    width: 50%;
+}
+
+.changeQuantityBtn:hover {
+    background-color: green;
 }
